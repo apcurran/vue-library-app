@@ -33,6 +33,11 @@
     color: #fff;
     font-size: 1.1rem;
     outline: none;
+
+    transition:  background-color 210ms ease;
+}
+.form-add-btn[data-v-95e47c]:hover {
+    background-color: #1a66adfd;
 }
 .book-label[data-v-95e47c] {
     margin-bottom: .5em;
@@ -41,6 +46,7 @@
 .book-input[data-v-95e47c] {
     padding-top: .25em;
     padding-bottom: .25em;
+    padding-left: .35em;
     font-size: 1.1rem;
 }
 .book-input-checkbox[data-v-95e47c] {
@@ -75,8 +81,20 @@ th[data-v-95e47c] {
 tr[data-v-95e47c]:nth-child(odd) {
     background-color: #ddd;
 }
+.status-btn[data-v-95e47c] {
+    padding: .5em 1.25em;
+    border: none;
+    border-radius: 4px;
+    background-color: #008000;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+}
+.unfinished[data-v-95e47c] {
+    background-color: #cf5301;
+}
 .delete-btn[data-v-95e47c] {
-    width: 40px;
+    width: 35px;
     cursor: pointer;
     transition: opacity 150ms ease;
 }
