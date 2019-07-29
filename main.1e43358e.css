@@ -52,7 +52,7 @@
 /* Book List Table */
 .book-table[data-v-95e47c] {
     width: 960px;
-    max-width: 90%;
+
     margin: 0 auto;
     margin-top: 2em;
     margin-bottom: 3em;
@@ -83,11 +83,21 @@ tr[data-v-95e47c]:nth-child(odd) {
 .delete-btn[data-v-95e47c]:hover {
     opacity: .7;
 }
+@media screen and (max-width: 66.56em) {
+.book-table[data-v-95e47c] {
+        width: 90%;
+}
+}
+@media screen and (max-width: 47em) {
+.book-table[data-v-95e47c] {
+        font-size: .75rem;
+}
+th[data-v-95e47c],
+    td[data-v-95e47c] {
+        padding: .75em;
+}
+}
 .footer[data-v-d508a6] {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
     padding-top: 1em;
     padding-bottom: 1em;
 
@@ -132,4 +142,14 @@ tr[data-v-95e47c]:nth-child(odd) {
 html {
   font-family: 'Montserrat', sans-serif;
   letter-spacing: .75px;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.app-books {
+  flex: 1;
 }

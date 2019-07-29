@@ -9451,11 +9451,11 @@ exports.default = _default;
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { attrs: { id: "app" } },
+    { staticClass: "container", attrs: { id: "app" } },
     [
       _c("app-header"),
       _vm._v(" "),
-      _c("app-books"),
+      _c("app-books", { staticClass: "app-books" }),
       _vm._v(" "),
       _c("app-footer")
     ],
