@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <div id="app" class="container">
       <app-header></app-header>
-      <app-books></app-books>
+      <app-books class="app-books"></app-books>
       <app-footer></app-footer>
   </div>
 </template>
@@ -34,5 +34,16 @@ html {
   font-family: 'Montserrat', sans-serif;
   letter-spacing: .75px;
 }
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.app-books {
+  flex: 1;
+}
+
 
 </style>

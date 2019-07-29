@@ -122,7 +122,7 @@ export default {
 /* Book List Table */
 .book-table {
     width: 960px;
-    max-width: 90%;
+
     margin: 0 auto;
     margin-top: 2em;
     margin-bottom: 3em;
@@ -158,6 +158,24 @@ tr:nth-child(odd) {
 
 .delete-btn:hover {
     opacity: .7;
+}
+
+@media screen and (max-width: 66.56em) {
+    .book-table {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 47em) {
+    .book-table {
+        font-size: .75rem;
+    }
+
+    th,
+    td {
+        padding: .75em;
+    }
+
 }
 
 </style>
