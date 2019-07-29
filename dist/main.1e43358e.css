@@ -1,0 +1,135 @@
+.header[data-v-9d529f] {
+    background-color: #333;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    color: #fff;
+
+    display: flex;
+    justify-content: center;
+}
+.header-title span[data-v-9d529f] {
+    color: #c3def7;
+}
+/* Book Form Section */
+.form[data-v-95e47c] {
+    width: 960px;
+    max-width: 90%;
+    margin: 2em auto;
+}
+.form-field[data-v-95e47c] {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.form-add-btn[data-v-95e47c] {
+    display: block;
+    width: 100%;
+    padding: .75em;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: #2286e4fd;
+    color: #fff;
+    font-size: 1.1rem;
+    outline: none;
+}
+.book-label[data-v-95e47c] {
+    margin-bottom: .5em;
+    font-weight: bolder;
+}
+.book-input[data-v-95e47c] {
+    padding-top: .25em;
+    padding-bottom: .25em;
+    font-size: 1.1rem;
+}
+.book-input-checkbox[data-v-95e47c] {
+    cursor: pointer;
+    width: 1em;
+    height: 1em;
+}
+
+/* Book List Table */
+.book-table[data-v-95e47c] {
+    width: 960px;
+    max-width: 90%;
+    margin: 0 auto;
+    margin-top: 2em;
+    margin-bottom: 3em;
+    padding: .5em;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+th[data-v-95e47c],
+td[data-v-95e47c] {
+    padding: 1em;
+}
+th[data-v-95e47c] {
+    text-align: left;
+}
+#thead-row[data-v-95e47c] {
+    background-color: #fbfbfb;
+}
+tr[data-v-95e47c]:nth-child(odd) {
+    background-color: #ddd;
+}
+.delete-btn[data-v-95e47c] {
+    width: 40px;
+    cursor: pointer;
+    transition: opacity 150ms ease;
+}
+.delete-btn[data-v-95e47c]:hover {
+    opacity: .7;
+}
+.footer[data-v-d508a6] {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+
+    background-color: #222;
+    color: #eee;
+    font-size: .85rem;
+}
+.footer-list[data-v-d508a6] {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.footer-item[data-v-d508a6] {
+    margin: .35em 0;
+}
+.footer-item-link[data-v-d508a6] {
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 150ms ease;
+}
+.footer-item-link[data-v-d508a6]:hover {
+    opacity: .65;
+}
+.footer-item span[data-v-d508a6] {
+    color: #c3def7;
+    font-weight: bolder;
+}
+.footer-item-link img[data-v-d508a6] {
+    width: 40px;
+    fill: #fff;
+}
+/* Global Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: .75px;
+}
