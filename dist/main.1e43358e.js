@@ -9012,6 +9012,7 @@ exports.default = void 0;
 //
 //
 //
+//
 var _default = {
   name: "Books",
   data: function data() {
@@ -9037,6 +9038,9 @@ var _default = {
       this.book.author = "";
       this.book.pages = null;
       this.book.status = false;
+    },
+    removeBook: function removeBook() {
+      this.books.splice(this, 1);
     }
   }
 };
@@ -9084,7 +9088,7 @@ exports.default = _default;
                 }
               ],
               staticClass: "book-input",
-              attrs: { type: "text", id: "book-title" },
+              attrs: { type: "text", id: "book-title", required: "" },
               domProps: { value: _vm.book.title },
               on: {
                 input: function($event) {
@@ -9114,7 +9118,7 @@ exports.default = _default;
                 }
               ],
               staticClass: "book-input",
-              attrs: { type: "text", id: "book-author" },
+              attrs: { type: "text", id: "book-author", required: "" },
               domProps: { value: _vm.book.author },
               on: {
                 input: function($event) {
@@ -9144,7 +9148,12 @@ exports.default = _default;
                 }
               ],
               staticClass: "book-input",
-              attrs: { type: "text", id: "book-pages" },
+              attrs: {
+                type: "number",
+                id: "book-pages",
+                required: "",
+                min: "1"
+              },
               domProps: { value: _vm.book.pages },
               on: {
                 input: function($event) {
@@ -9230,9 +9239,46 @@ exports.default = _default;
               _vm._v(" "),
               _c("td", [_vm._v(_vm._s(value.pages))]),
               _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(value.status))]),
+              value.status
+                ? _c("td", [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "status-btn finished",
+                        on: {
+                          click: function($event) {
+                            value.status = !value.status
+                          }
+                        }
+                      },
+                      [_vm._v("Finished!")]
+                    )
+                  ])
+                : _c("td", [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "status-btn unfinished",
+                        on: {
+                          click: function($event) {
+                            value.status = !value.status
+                          }
+                        }
+                      },
+                      [_vm._v("Not yet")]
+                    )
+                  ]),
               _vm._v(" "),
-              _vm._m(1, true)
+              _c("td", [
+                _c("img", {
+                  staticClass: "delete-btn",
+                  attrs: {
+                    src: "/trashcan.f1aab3cc.svg",
+                    alt: "Trashcan icon"
+                  },
+                  on: { click: _vm.removeBook }
+                })
+              ])
             ])
           }),
           0
@@ -9254,24 +9300,10 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", { staticClass: "th" }, [_vm._v("Pages")]),
         _vm._v(" "),
-        _c("th", { staticClass: "th" }, [_vm._v("Status")]),
+        _c("th", { staticClass: "th" }, [_vm._v("Status (toggle)")]),
         _vm._v(" "),
         _c("th", { staticClass: "th" }, [_vm._v("Delete")])
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("img", {
-        staticClass: "delete-btn",
-        attrs: {
-          src: "/trashcan.f1aab3cc.svg",
-          alt: "Trashcan icon"
-        }
-      })
     ])
   }
 ]

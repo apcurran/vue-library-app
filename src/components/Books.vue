@@ -4,15 +4,15 @@
             <form class="form" @submit.prevent="addBook">
                 <div class="form-field">
                     <label for="book-title" class="book-label">Title:</label>
-                    <input type="text" class="book-input" id="book-title" v-model="book.title">
+                    <input type="text" class="book-input" id="book-title" required v-model="book.title">
                 </div>
                 <div class="form-field">
                     <label for="book-author" class="book-label">Author:</label>
-                    <input type="text" class="book-input" id="book-author" v-model="book.author">
+                    <input type="text" class="book-input" id="book-author" required v-model="book.author">
                 </div>
                 <div class="form-field">
                     <label for="book-pages" class="book-label">Pages:</label>
-                    <input type="text" class="book-input" id="book-pages" v-model="book.pages">
+                    <input type="number" class="book-input" id="book-pages" required min="1" v-model="book.pages">
                 </div>
                 <div class="form-field">
                     <label for="book-read" class="book-label">Read Yet?</label>
@@ -28,7 +28,7 @@
                         <th class="th">Title</th>
                         <th class="th">Author</th>
                         <th class="th">Pages</th>
-                        <th class="th">Status</th>
+                        <th class="th">Status (toggle)</th>
                         <th class="th">Delete</th>
                     </tr>
                 </thead>
@@ -38,8 +38,9 @@
                         <td>{{ value.title }}</td>
                         <td>{{ value.author }}</td>
                         <td>{{ value.pages }}</td>
-                        <td>{{ value.status }}</td>
-                        <td><img class="delete-btn" src="../images/trashcan.svg" alt="Trashcan icon"></td>
+                        <td v-if="value.status"><button class="status-btn finished" v-on:click="value.status = !value.status">Finished!</button></td>
+                        <td v-else><button class="status-btn unfinished" v-on:click="value.status = !value.status">Not yet</button></td>
+                        <td><img class="delete-btn" src="../images/trashcan.svg" alt="Trashcan icon" v-on:click="removeBook"></td>
                     </tr>
                 </tbody>
             </table>
@@ -68,6 +69,9 @@ export default {
             this.book.author = "";
             this.book.pages = null;
             this.book.status = false;
+        },
+        removeBook() {
+            this.books.splice(this, 1);
         }
     }
 }
@@ -100,6 +104,12 @@ export default {
     color: #fff;
     font-size: 1.1rem;
     outline: none;
+
+    transition:  background-color 210ms ease;
+}
+
+.form-add-btn:hover {
+    background-color: #1a66adfd;
 }
 
 .book-label {
@@ -110,6 +120,7 @@ export default {
 .book-input {
     padding-top: .25em;
     padding-bottom: .25em;
+    padding-left: .35em;
     font-size: 1.1rem;
 }
 
@@ -150,8 +161,22 @@ tr:nth-child(odd) {
     background-color: #ddd;
 }
 
+.status-btn {
+    padding: .5em 1.25em;
+    border: none;
+    border-radius: 4px;
+    background-color: #008000;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+}
+
+.unfinished {
+    background-color: #cf5301;
+}
+
 .delete-btn {
-    width: 40px;
+    width: 35px;
     cursor: pointer;
     transition: opacity 150ms ease;
 }
