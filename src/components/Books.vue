@@ -62,6 +62,9 @@ export default {
             books: []
         }
     },
+    created() {
+        this.books = JSON.parse(localStorage.getItem("storedBooks")) || [];
+    },
     methods: {
         addBook() {
             this.books.push({title: this.book.title, author: this.book.author, pages: this.book.pages, status: this.book.status});
@@ -69,9 +72,13 @@ export default {
             this.book.author = "";
             this.book.pages = null;
             this.book.status = false;
+
+            localStorage.setItem("storedBooks", JSON.stringify(this.books));
         },
         removeBook() {
             this.books.splice(this, 1);
+
+            localStorage.setItem("storedBooks", JSON.stringify(this.books));
         }
     }
 }
@@ -201,6 +208,9 @@ tr:nth-child(odd) {
         padding: .75em;
     }
 
+    .status-btn {
+        padding: .2em .5em;
+    }
 }
 
 </style>

@@ -1,5 +1,5 @@
 .header[data-v-9d529f] {
-    background-color: #333;
+    background-color: #222;
     padding-top: 2em;
     padding-bottom: 2em;
     color: #fff;
@@ -113,6 +113,9 @@ tr[data-v-95e47c]:nth-child(odd) {
 th[data-v-95e47c],
     td[data-v-95e47c] {
         padding: .75em;
+}
+.status-btn[data-v-95e47c] {
+        padding: .2em .5em;
 }
 }
 .footer[data-v-d508a6] {

@@ -9026,6 +9026,9 @@ var _default = {
       books: []
     };
   },
+  created: function created() {
+    this.books = JSON.parse(localStorage.getItem("storedBooks")) || [];
+  },
   methods: {
     addBook: function addBook() {
       this.books.push({
@@ -9038,9 +9041,11 @@ var _default = {
       this.book.author = "";
       this.book.pages = null;
       this.book.status = false;
+      localStorage.setItem("storedBooks", JSON.stringify(this.books));
     },
     removeBook: function removeBook() {
       this.books.splice(this, 1);
+      localStorage.setItem("storedBooks", JSON.stringify(this.books));
     }
   }
 };
@@ -9565,7 +9570,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53456" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58044" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
