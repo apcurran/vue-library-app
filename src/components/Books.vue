@@ -40,7 +40,7 @@
                         <td>{{ value.pages }}</td>
                         <td v-if="value.status"><button class="status-btn finished" v-on:click="value.status = !value.status">Finished!</button></td>
                         <td v-else><button class="status-btn unfinished" v-on:click="value.status = !value.status">Not yet</button></td>
-                        <td><img class="delete-btn" src="../images/trashcan.svg" alt="Trashcan icon" v-on:click="removeBook"></td>
+                        <td><img class="delete-btn" src="../images/trashcan.svg" alt="Trashcan icon" v-on:click="removeBook(key)"></td>
                     </tr>
                 </tbody>
             </table>
@@ -75,8 +75,8 @@ export default {
 
             localStorage.setItem("storedBooks", JSON.stringify(this.books));
         },
-        removeBook() {
-            this.books.splice(this, 1);
+        removeBook(key) {
+            this.books.splice(key, 1);
 
             localStorage.setItem("storedBooks", JSON.stringify(this.books));
         }

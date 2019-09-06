@@ -30,9 +30,10 @@ export default {
     box-sizing: border-box;
 }
 
-html {
+html,
+button {
   font-family: 'Montserrat', sans-serif;
-  letter-spacing: .75px;
+  letter-spacing: .04em;
 }
 
 .container {
