@@ -27,7 +27,7 @@
                     <tr class="thead-row" id="thead-row">
                         <th class="th">Title</th>
                         <th class="th">Author</th>
-                        <th class="th">Pages</th>
+                        <th class="th table-pages-title">Pages</th>
                         <th class="th">Status (toggle)</th>
                         <th class="th">Delete</th>
                     </tr>
@@ -37,7 +37,7 @@
                     <tr v-for="(value, key) in books" v-bind:key="key">
                         <td>{{ value.title }}</td>
                         <td>{{ value.author }}</td>
-                        <td>{{ value.pages }}</td>
+                        <td class="table-pages">{{ value.pages }}</td>
                         <td v-if="value.status"><button class="status-btn finished" v-on:click="value.status = !value.status">Finished!</button></td>
                         <td v-else><button class="status-btn unfinished" v-on:click="value.status = !value.status">Not yet</button></td>
                         <td><img class="delete-btn" src="../images/trashcan.svg" alt="Trashcan icon" v-on:click="removeBook(key)"></td>
@@ -121,17 +121,18 @@ export default {
 
 .book-label {
     margin-bottom: .5em;
-    font-weight: bolder;
+    font-weight: 600;
 }
 
 .book-input {
     padding-top: .5em;
     padding-bottom: .5em;
     padding-left: .35em;
-    font-size: 1.1rem;
+    font-size: 1rem;
     background-color: #eee;
     border: none;
     border-radius: 4px;
+    font-weight: 400;
 }
 
 .book-input-checkbox {
@@ -161,6 +162,15 @@ td {
 
 th {
     text-align: left;
+}
+
+.table-pages-title {
+    text-align: center;
+}
+
+.table-pages {
+    text-align: right;
+    padding-right: 4.35em;
 }
 
 #thead-row {
@@ -211,8 +221,20 @@ tr:nth-child(odd) {
         padding: .75em;
     }
 
+    .table-pages {
+        text-align: right;
+        padding-right: 3.25em;
+    }
+
     .status-btn {
         padding: .2em .5em;
+    }
+}
+
+@media screen and (max-width: 25em) {
+    .table-pages {
+        text-align: right;
+        padding-right: 1.25em;
     }
 }
 

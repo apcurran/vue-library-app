@@ -9242,7 +9242,9 @@ exports.default = _default;
               _vm._v(" "),
               _c("td", [_vm._v(_vm._s(value.author))]),
               _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(value.pages))]),
+              _c("td", { staticClass: "table-pages" }, [
+                _vm._v(_vm._s(value.pages))
+              ]),
               _vm._v(" "),
               value.status
                 ? _c("td", [
@@ -9307,7 +9309,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", { staticClass: "th" }, [_vm._v("Author")]),
         _vm._v(" "),
-        _c("th", { staticClass: "th" }, [_vm._v("Pages")]),
+        _c("th", { staticClass: "th table-pages-title" }, [_vm._v("Pages")]),
         _vm._v(" "),
         _c("th", { staticClass: "th" }, [_vm._v("Status (toggle)")]),
         _vm._v(" "),

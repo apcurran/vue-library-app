@@ -41,16 +41,17 @@
 }
 .book-label[data-v-95e47c] {
     margin-bottom: .5em;
-    font-weight: bolder;
+    font-weight: 600;
 }
 .book-input[data-v-95e47c] {
     padding-top: .5em;
     padding-bottom: .5em;
     padding-left: .35em;
-    font-size: 1.1rem;
+    font-size: 1rem;
     background-color: #eee;
     border: none;
     border-radius: 4px;
+    font-weight: 400;
 }
 .book-input-checkbox[data-v-95e47c] {
     cursor: pointer;
@@ -77,6 +78,13 @@ td[data-v-95e47c] {
 }
 th[data-v-95e47c] {
     text-align: left;
+}
+.table-pages-title[data-v-95e47c] {
+    text-align: center;
+}
+.table-pages[data-v-95e47c] {
+    text-align: right;
+    padding-right: 4.35em;
 }
 #thead-row[data-v-95e47c] {
     background-color: #fbfbfb;
@@ -117,8 +125,18 @@ th[data-v-95e47c],
     td[data-v-95e47c] {
         padding: .75em;
 }
+.table-pages[data-v-95e47c] {
+        text-align: right;
+        padding-right: 3.25em;
+}
 .status-btn[data-v-95e47c] {
         padding: .2em .5em;
+}
+}
+@media screen and (max-width: 25em) {
+.table-pages[data-v-95e47c] {
+        text-align: right;
+        padding-right: 1.25em;
 }
 }
 .footer[data-v-d508a6] {
