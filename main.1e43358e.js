@@ -9043,8 +9043,8 @@ var _default = {
       this.book.status = false;
       localStorage.setItem("storedBooks", JSON.stringify(this.books));
     },
-    removeBook: function removeBook() {
-      this.books.splice(this, 1);
+    removeBook: function removeBook(key) {
+      this.books.splice(key, 1);
       localStorage.setItem("storedBooks", JSON.stringify(this.books));
     }
   }
@@ -9281,7 +9281,11 @@ exports.default = _default;
                     src: "/trashcan.f1aab3cc.svg",
                     alt: "Trashcan icon"
                   },
-                  on: { click: _vm.removeBook }
+                  on: {
+                    click: function($event) {
+                      return _vm.removeBook(key)
+                    }
+                  }
                 })
               ])
             ])
