@@ -96,11 +96,11 @@ export default {
 .form-field {
     display: flex;
     flex-direction: column;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin-top: 1.75em;
 }
 
 .form-add-btn {
+    margin-top: 1.5em;
     display: block;
     width: 100%;
     padding: .75em;
@@ -125,10 +125,13 @@ export default {
 }
 
 .book-input {
-    padding-top: .25em;
-    padding-bottom: .25em;
+    padding-top: .5em;
+    padding-bottom: .5em;
     padding-left: .35em;
     font-size: 1.1rem;
+    background-color: #eee;
+    border: none;
+    border-radius: 4px;
 }
 
 .book-input-checkbox {
