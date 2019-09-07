@@ -87,6 +87,7 @@ export default {
 <style scoped>
 
 /* Book Form Section */
+
 .form {
     width: 960px;
     max-width: 90%;
@@ -129,7 +130,7 @@ export default {
     padding-bottom: .5em;
     padding-left: .35em;
     font-size: 1rem;
-    background-color: #eee;
+    background-color: hsl(203, 19%, 92%);
     border: none;
     border-radius: 4px;
     font-weight: 400;
@@ -144,13 +145,10 @@ export default {
 /* Book List Table */
 .book-table {
     width: 960px;
-
-    margin: 0 auto;
-    margin-top: 2em;
-    margin-bottom: 3em;
+    margin: 6em auto;
     padding: .5em;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, .2);
+    border-radius: 4px;
     table-layout: fixed;
     border-collapse: collapse;
 }
@@ -171,14 +169,19 @@ th {
 .table-pages {
     text-align: right;
     padding-right: 4.35em;
+    font-feature-settings: "tnum";
 }
 
 #thead-row {
-    background-color: #fbfbfb;
+    background-color: #fafafa;
 }
 
 tr:nth-child(odd) {
-    background-color: #ddd;
+    background-color: hsl(203, 19%, 92%);
+}
+
+tr:nth-child(even) {
+    background-color: hsl(204, 24%, 100%);
 }
 
 .status-btn {
