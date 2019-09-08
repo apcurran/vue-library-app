@@ -38,9 +38,15 @@
                         <td>{{ value.title }}</td>
                         <td>{{ value.author }}</td>
                         <td class="table-pages">{{ value.pages }}</td>
-                        <td v-if="value.status"><button class="status-btn finished" v-on:click="value.status = !value.status">Finished!</button></td>
-                        <td v-else><button class="status-btn unfinished" v-on:click="value.status = !value.status">Not yet</button></td>
-                        <td><img class="delete-btn" src="../images/trashcan.svg" alt="Trashcan icon" v-on:click="removeBook(key)"></td>
+                        <td v-if="value.status">
+                            <button class="status-btn finished" v-on:click="changeStatus(value, key)">Finished!</button>
+                        </td>
+                        <td v-else>
+                            <button class="status-btn unfinished" v-on:click="changeStatus(value, key)">Not yet</button>
+                        </td>
+                        <td>
+                            <img class="delete-btn" src="../images/trashcan.svg" alt="Trashcan icon" v-on:click="removeBook(key)">
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -57,7 +63,7 @@ export default {
                 title: "",
                 author: "",
                 pages: null,
-                status: false
+                status: null
             },
             books: []
         }
@@ -71,8 +77,13 @@ export default {
             this.book.title = "";
             this.book.author = "";
             this.book.pages = null;
-            this.book.status = false;
+            this.book.status = null;
 
+            localStorage.setItem("storedBooks", JSON.stringify(this.books));
+        },
+        changeStatus(value, key) {
+            value.status = !value.status;
+            
             localStorage.setItem("storedBooks", JSON.stringify(this.books));
         },
         removeBook(key) {
