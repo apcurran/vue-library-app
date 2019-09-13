@@ -1,6 +1,6 @@
 <template>
     <header class="header">
-        <h1 class="header-title">My <span>Books</span></h1>
+        <h1 class="header-title">My<img class="header-icon" src="../images/open-book.svg"><span>Books</span></h1>
     </header>
 </template>
 
@@ -20,6 +20,13 @@ export default {
 
     display: flex;
     justify-content: center;
+}
+
+.header-icon {
+    width: 45px;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    vertical-align: bottom;
 }
 
 .header-title span {

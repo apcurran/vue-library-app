@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="book-wrapper">
         <section class="book-form-section">
             <form class="form" @submit.prevent="addBook">
                 <div class="form-field">
@@ -97,6 +97,12 @@ export default {
 
 <style scoped>
 
+.book-wrapper {
+    --light-grey-blue: hsl(203, 19%, 92%);
+    --bg-btn-clr: hsla(209, 78%, 51%, 0.992);
+    --bg-btn-clr-hover: hsla(209, 80%, 35%, 0.992);
+}
+
 /* Book Form Section */
 
 .form {
@@ -119,7 +125,7 @@ export default {
     cursor: pointer;
     border: none;
     border-radius: 4px;
-    background-color: #2286e4fd;
+    background-color: var(--bg-btn-clr);
     color: #fff;
     font-size: 1.1rem;
     outline: none;
@@ -128,7 +134,7 @@ export default {
 }
 
 .form-add-btn:hover {
-    background-color: #1a66adfd;
+    background-color: var(--bg-btn-clr-hover);
 }
 
 .book-label {
@@ -141,7 +147,7 @@ export default {
     padding-bottom: .5em;
     padding-left: .35em;
     font-size: 1rem;
-    background-color: hsl(203, 19%, 92%);
+    background-color: var(--light-grey-blue);
     border: none;
     border-radius: 4px;
     font-weight: 400;
@@ -188,7 +194,7 @@ th {
 }
 
 tr:nth-child(odd) {
-    background-color: hsl(203, 19%, 92%);
+    background-color: var(--light-grey-blue);
 }
 
 tr:nth-child(even) {
@@ -199,14 +205,32 @@ tr:nth-child(even) {
     padding: .5em 1.25em;
     border: none;
     border-radius: 4px;
-    background-color: #008000;
-    color: #fff;
     outline: none;
     cursor: pointer;
 }
 
+.finished {
+    background-color: hsl(120, 75%, 74%);
+    color: #000;
+    transition: background-color 200ms ease,
+                color 200ms ease;
+}
+
+.finished:hover {
+    background-color: hsl(120, 75%, 30%);
+    color: #fff;
+}
+
 .unfinished {
-    background-color: #cf5301;
+    background-color: hsl(12, 100%, 68%);
+    color: #000;
+    transition: background-color 200ms ease,
+                color 200ms ease;
+}
+
+.unfinished:hover {
+    background-color: hsl(12, 100%, 38%);
+    color: #fff;
 }
 
 .delete-btn {
