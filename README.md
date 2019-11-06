@@ -3,6 +3,8 @@ Creating a book list program using Vue JS
 
 Project [link](https://apcurran.github.io/vue-library-app/)
 
+![Library App](https://github.com/apcurran/vue-library-app/blob/master/src/images/library-app.jpg)
+
 ## Features:
 
 - Utilizes Vue framework for JavaScript (components, event handling, data binding, and methods)
